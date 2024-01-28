@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<name>gentoo-mint</name>
+	</maintainer>
+	<use>
+		<flag name="cinnamon">Install Cinnamon themes</flag>
+		<flag name="xfwm">Install xfwm4 themes</flag>
+	</use>
+</pkgmetadata>

@@ -1,0 +1,11 @@
+# This file is deprecated as per GLEP 56 in favor of metadata.xml. Please add
+# your descriptions to your package's metadata.xml ONLY.
+# * generated automatically using egencache *
+
+x11-themes/yaru:cinnamon - Build Yaru with Cinnamon flavour
+x11-themes/yaru:gnome-shell - Build gnome-shell component
+x11-themes/yaru:gtk - Support yaru accent colors using adwaita theming
+x11-themes/yaru:mate - Build Yaru mate flavour
+x11-themes/yaru:sounds - Build sounds component
+x11-themes/yaru:unity - Build Yaru with Unity assets
+x11-themes/yaru:xfwm - Build Yaru with xfwm4 assets
