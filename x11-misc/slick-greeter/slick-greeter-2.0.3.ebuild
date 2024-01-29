@@ -21,6 +21,7 @@ DEPEND="
 	x11-libs/gtk+:3[X]
 	x11-libs/libXext
 	x11-libs/pixman
+	x11-libs/xapp
 	x11-misc/lightdm[introspection,vala]
 "
 RDEPEND="
