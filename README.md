@@ -41,6 +41,7 @@ This is a personal overlay ebuild repository for Gentoo Linux aiming to create a
 | mint-backgrounds-vera     | The desktop backgrounds for Linux Mint 21.1 Vera                                                                       |
 | mint-backgrounds-victoria | The desktop backgrounds for Linux Mint 21.2 Victoria                                                                   |
 | mint-backgrounds-virginia | The desktop backgrounds for Linux Mint 21.3 Virginia                                                                   |
+| mint-backgrounds-wilma    | The desktop backgrounds for Linux Mint 22 Wilma                                                                        |
 | mint-themes               | Desktop themes for Linux Mint                                                                                          |
 | mint-xfwm4-themes         | Lint Mint themes for HiDPI displays                                                                                    |
 | yaru                      | Copy of [gentoo-unity7's yaru-theme](https://github.com/gentoo-mirror/gentoo-unity7/tree/master/x11-themes/yaru-theme) |
