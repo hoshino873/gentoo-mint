@@ -7,7 +7,7 @@ DISTUTILS_SINGLE_IMPL=1
 PYTHON_COMPAT=( python3_{10..12} )
 
 UVER=
-UREV=5ubuntu1
+UREV=5build7
 
 inherit gnome2 distutils-r1
 
@@ -25,7 +25,7 @@ SRC_URI="${SRC_URI} ${UURL}-${UREV}.debian.tar.xz"
 
 LICENSE="GPL-3+ BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 IUSE="+accessibility debug wayland"
 RESTRICT="test"
 
@@ -68,3 +68,13 @@ DEPEND="${COMMON_DEPEND}
 		>=dev-python/python-distutils-extra-2.10[${PYTHON_USEDEP}]
 	')
 "
+
+PATCHES=(
+	"${FILESDIR}/${P}-fix-segfault-on-python3.12.patch"
+)
+
+src_prepare() {
+	eapply "${WORKDIR}"/debian/patches/*.patch
+
+	default
+}

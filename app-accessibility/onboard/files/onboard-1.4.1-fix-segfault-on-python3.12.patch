@@ -1,0 +1,52 @@
+--- a/Onboard/osk/osk_devices.c
++++ b/Onboard/osk/osk_devices.c
+@@ -801,6 +801,7 @@ osk_devices_event_filter (GdkXEvent  *gdk_xevent,
+                           GdkEvent   *gdk_event,
+                           OskDevices *dev)
+ {
++    PyGILState_STATE state = PyGILState_Ensure ();
+     XGenericEventCookie *cookie = &((XEvent *) gdk_xevent)->xcookie;
+ 
+     if (cookie->type == GenericEvent && cookie->extension == dev->xi2_opcode)
+@@ -812,10 +813,10 @@ osk_devices_event_filter (GdkXEvent  *gdk_xevent,
+         //printf("device %d evtype %d type %d  detail %d win %d\n", e->deviceid, evtype, e->type, e->detail, (int)e->event);
+ 
+         if (handle_pointing_event(evtype, event, dev))
+-            return GDK_FILTER_CONTINUE;
++            goto skip;
+ 
+         if (handle_enter_event(evtype, event, dev))
+-            return GDK_FILTER_CONTINUE;
++            goto skip;
+ 
+         switch (evtype)
+         {
+@@ -927,6 +928,9 @@ osk_devices_event_filter (GdkXEvent  *gdk_xevent,
+         }
+     }
+ 
++skip:
++    PyGILState_Release (state);
++
+     return GDK_FILTER_CONTINUE;
+ }
+ 
+--- a/Onboard/osk/osk_udev.c
++++ b/Onboard/osk/osk_udev.c
+@@ -176,6 +176,7 @@ osk_udev_get_keyboard_devices (PyObject *self, PyObject *args)
+ static gboolean
+ on_udev_event(GIOChannel* source, GIOCondition condition, gpointer data)
+ {
++    PyGILState_STATE state = PyGILState_Ensure();
+     OskUDev *this = (OskUDev*) data;
+ 
+     if (this->input_monitor)
+@@ -194,6 +195,8 @@ on_udev_event(GIOChannel* source, GIOCondition condition, gpointer data)
+         }
+     }
+ 
++    PyGILState_Release(state);
++
+     return TRUE;
+ }
+ 

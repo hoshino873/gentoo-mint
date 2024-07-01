@@ -4,10 +4,11 @@
 EAPI=8
 DISTUTILS_EXT=1
 DISTUTILS_SINGLE_IMPL=1
-PYTHON_COMPAT=( python3_{10..12} )
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{10..13} )
 
 UVER=
-UREV=5build7
+UREV=5ubuntu6
 
 inherit gnome2 distutils-r1
 
@@ -68,3 +69,13 @@ DEPEND="${COMMON_DEPEND}
 		>=dev-python/python-distutils-extra-2.10[${PYTHON_USEDEP}]
 	')
 "
+
+PATCHES=(
+	"${FILESDIR}/${P}-fix-segfault-on-python3.12.patch"
+)
+
+src_prepare() {
+	eapply "${WORKDIR}"/debian/patches/*.patch
+
+	default
+}
