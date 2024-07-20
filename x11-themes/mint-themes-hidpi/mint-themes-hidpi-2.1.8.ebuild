@@ -3,9 +3,9 @@
 
 EAPI=8
 
-DESCRIPTION="Mint xfwm4 themes for HiDPI displays"
-HOMEPAGE="https://github.com/hoshino873/mint-xfwm4-themes"
-SRC_URI="https://github.com/hoshino873/${PN}/releases/download/${PV}/${P}.tar.gz"
+DESCRIPTION="Mint themes for HiDPI displays"
+HOMEPAGE="https://github.com/hoshino873/mint-themes-hidpi"
+SRC_URI="https://github.com/hoshino873/${PN}/releases/download/hidpi/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-3+"
 SLOT="0"
@@ -13,6 +13,10 @@ KEYWORDS="amd64 ~arm64 ~mips ~ppc ~ppc64 ~sparc x86"
 
 # This ebuild does not install any binaries
 RESTRICT="binchecks strip"
+
+RDEPEND="
+	!x11-themes/mint-xfwm4-themes
+"
 
 src_install() {
 	insinto /
