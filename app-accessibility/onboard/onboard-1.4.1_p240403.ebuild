@@ -4,20 +4,25 @@
 EAPI=8
 DISTUTILS_EXT=1
 DISTUTILS_SINGLE_IMPL=1
-PYTHON_COMPAT=( python3_{10..12} )
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{10..13} )
 
 UVER=
-UREV=5build7
+UREV=5ubuntu6
 
 inherit gnome2 distutils-r1
+
+MY_PV="${PV%_p*}"
+MY_P="${PN}-${MY_PV}"
 
 # Ubuntu delete superceded release tarballs from their mirrors if the release
 # is not Long Term Supported (LTS). Download tarballs from the always available
 # Launchpad archive
-UURL="https://launchpad.net/ubuntu/+archive/primary/+files/${PN}_${PV}${UVER}"
+UURL="https://launchpad.net/ubuntu/+archive/primary/+files/${PN}_${MY_PV}${UVER}"
 
 # Default variables
 SRC_URI="${UURL}.orig.tar.gz"
+S="${WORKDIR}/${MY_P}"
 
 DESCRIPTION="Simple on-screen Keyboard with macros and easy layout creation"
 HOMEPAGE="https://launchpad.net/onboard"
@@ -46,7 +51,7 @@ COMMON_DEPEND="
 RDEPEND="${COMMON_DEPEND}
 	app-text/iso-codes
 	>=dev-libs/glib-2.31.8:2
-	dev-libs/libappindicator:3
+	dev-libs/libayatana-appindicator:0
 	gnome-base/librsvg
 	>=sys-devel/gcc-5.2
 	>=sys-libs/glibc-2.29
@@ -70,7 +75,7 @@ DEPEND="${COMMON_DEPEND}
 "
 
 PATCHES=(
-	"${FILESDIR}/${P}-fix-segfault-on-python3.12.patch"
+	"${FILESDIR}/${MY_P}-fix-segfault-on-python3.12.patch"
 )
 
 src_prepare() {
