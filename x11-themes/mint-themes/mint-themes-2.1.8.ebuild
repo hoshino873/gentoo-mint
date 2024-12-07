@@ -12,7 +12,7 @@ SRC_URI="http://packages.linuxmint.com/pool/main/m/${PN}/${PN}_${PV}_all.deb"
 LICENSE="GPL-3+"
 SLOT="0"
 IUSE="cinnamon xfwm"
-KEYWORDS="amd64 ~arm64 ~mips ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="amd64 arm64 ~mips ~ppc ~ppc64 ~sparc x86"
 
 RDEPEND="${DEPEND}
 	gnome-base/librsvg:2
