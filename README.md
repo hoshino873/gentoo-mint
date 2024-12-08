@@ -1,6 +1,12 @@
 # gentoo-mint
 This is a personal overlay ebuild repository for Gentoo Linux aiming to create a Linux Mint Xfce Edition-like desktop environment.
 
+## Installation
+```bash
+eselect repository add gentoo-mint git https://github.com/hoshino873/gentoo-mint.git
+emaint sync -r gentoo-mint
+```
+
 ## Packages
 
 ### app-accessibility
