@@ -11,7 +11,7 @@ SRC_URI="http://packages.linuxmint.com/pool/main/m/${PN}/${PN}_${PV}_all.deb"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="amd64 ~arm64 ~mips ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="amd64 arm64 ~mips ~ppc ~ppc64 ~sparc x86"
 
 # This ebuild does not install any binaries
 RESTRICT="binchecks strip"
