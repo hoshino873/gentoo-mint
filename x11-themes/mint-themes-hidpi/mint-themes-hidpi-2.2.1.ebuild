@@ -12,7 +12,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64 ~mips ~ppc ~ppc64 ~sparc x86"
 
 # This ebuild does not install any binaries
-RESTRICT="binchecks strip"
+RESTRICT="binchecks mirror strip"
 
 src_install() {
 	insinto /

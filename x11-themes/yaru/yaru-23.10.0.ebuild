@@ -12,7 +12,7 @@ SRC_URI="https://github.com/ubuntu/${PN}/archive/refs/tags/${PV}.tar.gz -> ${P}.
 LICENSE="CC-BY-SA-4.0 GPL-3 LGPL-2.1 LGPL-3"
 SLOT="0"
 IUSE="cinnamon gnome-shell +sounds mate unity xfwm"
-KEYWORDS="amd64 ~arm64 ~mips ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="amd64 arm64 ~mips ~ppc ~ppc64 ~sparc x86"
 
 RDEPEND="${DEPEND}
 	gnome-base/librsvg:2
@@ -22,7 +22,7 @@ BDEPEND="
 	dev-lang/sassc
 "
 # This ebuild does not install any binaries
-RESTRICT="binchecks strip"
+RESTRICT="binchecks mirror strip"
 
 src_configure() {
 	local emesonargs=(

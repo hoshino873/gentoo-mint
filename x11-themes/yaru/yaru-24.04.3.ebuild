@@ -23,7 +23,7 @@ BDEPEND="
 	dev-libs/libxml2:2
 "
 # This ebuild does not install any binaries
-RESTRICT="binchecks strip test"
+RESTRICT="binchecks mirror strip test"
 
 src_configure() {
 	local emesonargs=(

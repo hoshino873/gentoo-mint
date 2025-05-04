@@ -19,7 +19,7 @@ RDEPEND="${DEPEND}
 	x11-themes/gnome-themes-standard
 "
 # This ebuild does not install any binaries
-RESTRICT="binchecks strip"
+RESTRICT="binchecks mirror strip"
 
 S="${WORKDIR}"
 
