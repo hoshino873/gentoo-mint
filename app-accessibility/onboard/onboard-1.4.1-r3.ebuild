@@ -69,9 +69,9 @@ DEPEND="${COMMON_DEPEND}
 "
 
 src_prepare() {
-	default
-
 	eapply "${WORKDIR}"/debian/patches
+
+	eapply_user
 }
 
 src_install() {
